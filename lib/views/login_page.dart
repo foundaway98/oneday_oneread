@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/theme/layout/scaffold_layout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,25 +7,31 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 8.0.w),
-              child: Center(
-                child: Text(
-                  "One Day One Read",
-                  style: TextStyle(
-                      fontSize: 36.sp,
-                      fontWeight: FontWeight.w900,
-                      height: 1.4.sp,
-                      letterSpacing: -0.25.sp),
-                ),
-              ),
+    return ScaffoldLayout(
+      useAppBar: false,
+      body: Column(
+        children: [
+          Center(
+            child: Text(
+              "One Day One Read",
+              style: TextStyle(
+                  fontSize: 36.sp,
+                  fontWeight: FontWeight.w900,
+                  height: 1.4.sp,
+                  letterSpacing: -0.25.sp),
             ),
-          ],
-        ),
+          ),
+          const Expanded(
+              child: SizedBox(
+            child: Center(
+              child: Text("Logo Image"),
+            ),
+          )),
+          ElevatedButton(onPressed: () {}, child: const Text("Google Login")),
+          ElevatedButton(onPressed: () {}, child: const Text("Naver Login")),
+          ElevatedButton(onPressed: () {}, child: const Text("Apple Login")),
+          SizedBox(height: 60.h)
+        ],
       ),
     );
   }
