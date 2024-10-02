@@ -9,6 +9,7 @@ class ScaffoldLayout extends StatelessWidget {
   final EdgeInsets? padding;
   final bool useAppBar;
   final PreferredSizeWidget? appBar;
+  final bool useDrawer;
 
   const ScaffoldLayout({
     super.key,
@@ -20,6 +21,7 @@ class ScaffoldLayout extends StatelessWidget {
     this.padding,
     this.useAppBar = true,
     this.appBar,
+    this.useDrawer = false,
   });
 
   @override
@@ -28,18 +30,39 @@ class ScaffoldLayout extends StatelessWidget {
       appBar: useAppBar
           ? (appBar ??
               AppBar(
-                title: title != null ? Text(title!) : null,
+                title: title != null
+                    ? Text(
+                        title!,
+                        style: const TextStyle(fontWeight: FontWeight.w900),
+                      )
+                    : null,
                 actions: actions,
               ))
           : null,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: body,
+          child: Center(child: body),
         ),
       ),
       floatingActionButton: floatingActionButton,
       backgroundColor: backgroundColor,
+      drawer: useDrawer
+          ? Drawer(
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: const Text("mypage"),
+                    onTap: () {},
+                  ),
+                  ListTile(
+                    title: const Text("writers"),
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            )
+          : null,
     );
   }
 }
