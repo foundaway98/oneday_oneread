@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(393, 852),
-      builder: (context, child) => MaterialApp(
+      builder: (_, child) => MaterialApp(
         title: 'one day one read',
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,

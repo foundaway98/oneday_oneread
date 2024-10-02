@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/layout/scaffold_layout.dart';
+import 'package:flutter_application_1/views/main_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatelessWidget {
@@ -27,7 +28,18 @@ class LoginPage extends StatelessWidget {
               child: Text("Logo Image"),
             ),
           )),
-          ElevatedButton(onPressed: () {}, child: const Text("Google Login")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const MainPage();
+                    },
+                  ),
+                );
+              },
+              child: const Text("Google Login")),
           ElevatedButton(onPressed: () {}, child: const Text("Naver Login")),
           ElevatedButton(onPressed: () {}, child: const Text("Apple Login")),
           SizedBox(height: 60.h)

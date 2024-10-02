@@ -14,7 +14,7 @@ class AppTheme {
     ),
     // Add more theme properties as needed
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.primaryLight,
+      backgroundColor: AppColors.lightBackground,
       foregroundColor: AppColors.lightText,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -37,7 +37,7 @@ class AppTheme {
     ),
     // Add more theme properties as needed
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.primaryDark,
+      backgroundColor: AppColors.darkBackground,
       foregroundColor: AppColors.darkText,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
