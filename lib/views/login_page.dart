@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/theme/layout/scaffold_layout.dart';
-import 'package:flutter_application_1/views/main_page.dart';
 import 'package:flutter_application_1/widgets/title_with_logo_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -19,14 +19,7 @@ class LoginPage extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const MainPage();
-                    },
-                  ),
-                );
+                context.go('/main');
               },
               child: const Text("Google Login")),
           ElevatedButton(onPressed: () {}, child: const Text("Naver Login")),
