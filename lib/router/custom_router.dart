@@ -1,3 +1,5 @@
+import 'package:flutter_application_1/views/article_page.dart';
+import 'package:flutter_application_1/views/history_page.dart';
 import 'package:flutter_application_1/views/login_page.dart';
 import 'package:flutter_application_1/views/main_page.dart';
 import 'package:flutter_application_1/views/splash_page.dart';
@@ -13,4 +15,12 @@ final router = GoRouter(initialLocation: '/', routes: [
       path: '/main',
       name: "main_page",
       builder: (context, state) => const MainPage()),
+  GoRoute(
+      path: '/article',
+      name: "article_page",
+      builder: (context, state) => const ArticlePage()),
+  GoRoute(
+      path: '/history',
+      name: "history_page",
+      builder: (context, state) => const HistoryPage()),
 ]);
