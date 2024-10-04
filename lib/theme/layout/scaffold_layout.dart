@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/drawer_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScaffoldLayout extends StatelessWidget {
   final Widget body;
@@ -37,32 +39,18 @@ class ScaffoldLayout extends StatelessWidget {
                       )
                     : null,
                 actions: actions,
+                scrolledUnderElevation: 0,
               ))
           : null,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Center(child: body),
+          padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 16.0.w),
+          child: body,
         ),
       ),
       floatingActionButton: floatingActionButton,
       backgroundColor: backgroundColor,
-      drawer: useDrawer
-          ? Drawer(
-              child: ListView(
-                children: [
-                  ListTile(
-                    title: const Text("mypage"),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text("writers"),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            )
-          : null,
+      drawer: useDrawer ? const DrawerWidget() : null,
     );
   }
 }

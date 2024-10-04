@@ -15,9 +15,9 @@ class AppColors {
 
   // Add more colors as needed
   static const Color primaryLight =
-      Colors.blue; // Placeholder, replace with your primary color
-  static const Color primaryDark = Colors
-      .lightBlue; // Placeholder, replace with your primary color for dark mode
+      Color(0xffD9D9D9); // Placeholder, replace with your primary color
+  static const Color primaryDark = Color(
+      0xff666666); // Placeholder, replace with your primary color for dark mode
 
   static const Color secondaryLight = Colors.green; // Placeholder
   static const Color secondaryDark = Colors.lightGreen; // Placeholder

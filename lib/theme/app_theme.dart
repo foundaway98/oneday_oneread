@@ -1,51 +1,49 @@
 import 'package:flutter/material.dart';
-
-import 'app_colors.dart';
+import 'package:flutter_application_1/theme/app_colors.dart';
 
 class AppTheme {
-  static ThemeData lightTheme = ThemeData(
-    fontFamily: 'Noto Sans',
-    brightness: Brightness.light,
-    scaffoldBackgroundColor: AppColors.lightBackground,
-    primaryColor: AppColors.primaryLight,
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: AppColors.lightText),
-      bodyMedium: TextStyle(color: AppColors.lightText),
-    ),
-    // Add more theme properties as needed
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.lightBackground,
-      foregroundColor: AppColors.lightText,
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryLight,
-        foregroundColor: AppColors.lightText,
+  static ThemeData _baseTheme(Brightness brightness, Color backgroundColor,
+      Color textColor, Color primaryColor) {
+    return ThemeData(
+      fontFamily: 'Noto Sans',
+      fontFamilyFallback: const ['Noto Sans KR'],
+      brightness: brightness,
+      scaffoldBackgroundColor: backgroundColor,
+      primaryColor: primaryColor,
+      textTheme: TextTheme(
+        bodyLarge: TextStyle(color: textColor),
+        bodyMedium: TextStyle(color: textColor),
       ),
-    ),
-    // Add more component themes here
-  );
+      appBarTheme: AppBarTheme(
+        backgroundColor: backgroundColor,
+        foregroundColor: textColor,
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: textColor,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+        ),
+      ),
+    );
+  }
 
-  static ThemeData darkTheme = ThemeData(
-    fontFamily: 'Noto Sans',
-    brightness: Brightness.dark,
-    scaffoldBackgroundColor: AppColors.darkBackground,
-    primaryColor: AppColors.primaryDark,
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: AppColors.darkText),
-      bodyMedium: TextStyle(color: AppColors.darkText),
-    ),
-    // Add more theme properties as needed
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.darkBackground,
-      foregroundColor: AppColors.darkText,
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryDark,
-        foregroundColor: AppColors.darkText,
-      ),
-    ),
-    // Add more component themes here
-  );
+  static ThemeData lightTheme = _baseTheme(
+    Brightness.light,
+    AppColors.lightBackground,
+    AppColors.lightText,
+    AppColors.primaryLight,
+  ).copyWith(
+      // Add any light-mode specific overrides here
+      );
+
+  static ThemeData darkTheme = _baseTheme(
+    Brightness.dark,
+    AppColors.darkBackground,
+    AppColors.darkText,
+    AppColors.primaryDark,
+  ).copyWith(
+      // Add any dark-mode specific overrides here
+      );
 }

@@ -13,36 +13,38 @@ class TitleWithLogoWidget extends StatelessWidget {
         SizedBox(
           height: 80.h,
         ),
-        Center(
-          child: Column(
-            children: [
-              Text(
-                "One Day",
-                style: TextStyle(
-                    fontSize: 36.sp,
-                    fontWeight: FontWeight.w900,
-                    height: 1.4.sp,
-                    letterSpacing: -0.25.sp),
-              ),
-              Text(
-                "One Read",
-                style: TextStyle(
-                    fontSize: 36.sp,
-                    fontWeight: FontWeight.w900,
-                    height: 1.4.sp,
-                    letterSpacing: -0.25.sp),
-              )
-            ],
+        SizedBox(
+          height: 130.h,
+          child: Center(
+            child: Column(
+              children: [
+                Text(
+                  "One Day",
+                  style: TextStyle(
+                      fontSize: 36.sp,
+                      fontWeight: FontWeight.w900,
+                      height: 1.4.sp,
+                      letterSpacing: -0.25.sp),
+                ),
+                Text(
+                  "One Read",
+                  style: TextStyle(
+                      fontSize: 36.sp,
+                      fontWeight: FontWeight.w900,
+                      height: 1.4.sp,
+                      letterSpacing: -0.25.sp),
+                )
+              ],
+            ),
           ),
         ),
         SizedBox(height: 45.h),
         Container(
           height: 205.h,
-          width: 205.w,
-          decoration: const BoxDecoration(color: Colors.amber),
-          child: const Center(
-            child: Text("Logo Image"),
-          ),
+          width: 205.h,
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(bottomRight: Radius.circular(45)),
+              color: Colors.amber),
         ),
       ],
     );

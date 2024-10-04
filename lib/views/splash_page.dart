@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/providers/auth_provider.dart';
+import 'package:flutter_application_1/theme/layout/scaffold_layout.dart';
 import 'package:flutter_application_1/widgets/title_with_logo_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashPage extends ConsumerStatefulWidget {
@@ -33,14 +33,10 @@ class SplashPageState extends ConsumerState<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const ScaffoldLayout(
+        useAppBar: false,
         body: Column(
-      children: [
-        SizedBox(
-          height: 80.h,
-        ),
-        const TitleWithLogoWidget()
-      ],
-    ));
+          children: [TitleWithLogoWidget()],
+        ));
   }
 }
